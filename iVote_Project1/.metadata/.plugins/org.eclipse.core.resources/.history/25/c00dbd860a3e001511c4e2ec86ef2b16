@@ -1,0 +1,81 @@
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Hashtable;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+import java.util.Set;
+
+public class Student {
+	
+	
+	Random random = new Random();
+	private String studentID;
+	private char studentAns;
+	private String randomchar;
+	
+	Set<String> studentId = new HashSet<String>();
+	
+	List anslist = new ArrayList();
+	
+	Map<String, String> studentAnsTable = new Hashtable<String, String>();
+	/**
+	 * @return the studentAns
+	 */
+	public char getStudentAns() {
+		return studentAns;
+	}
+	/**
+	 * @param studentAns the studentAns to set
+	 */
+	public void setStudentAns(char studentAns) {
+		this.studentAns = studentAns;
+	}
+	/**
+	 * @return the studentID
+	 */
+	public String getStudentID() {
+		return studentID;
+	}
+	/**
+	 * @param studentID the studentID to set
+	 */
+	public void setStudentID(String studentID) {
+		this.studentID = studentID;
+	}
+	
+	
+//	private void student()
+//	{
+//		studentId.add(studentID);
+//	}
+	public Set<String> StudentIDs(){
+		studentId.add(studentID);
+		
+		return studentId;
+	}
+		
+//	
+//	public void printset(){
+//		Iterator iter = studentId.iterator();
+//		while(iter.hasNext()){
+//			System.out.println(iter.next());
+//
+//		}
+		
+	public char randomAnswer(){
+		int min = 65;
+		int max = 68;
+		int ans = random.nextInt(max-min +1) + min;
+		studentAns = (char)ans;
+			
+		return studentAns;
+	}
+		
+		/**************************************************************************
+		 Generate Random number from 97 to 122
+		***************************************************************************/
+
+		
+	
+}

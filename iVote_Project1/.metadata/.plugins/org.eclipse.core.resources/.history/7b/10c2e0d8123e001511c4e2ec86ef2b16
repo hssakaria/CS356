@@ -1,0 +1,67 @@
+import java.util.Random;
+
+public class SimulationDriver{
+
+	public static void main(String[] args)  {
+		
+		int totalStudent = 0;
+		int noOfStudent = 5;
+		
+		System.out.println("Hetal Sakaria \n\n");
+		
+		System.out.println("\t CS356\n ");
+		
+		
+		
+		Random rand = new Random();
+		int questionNo = rand.nextInt(7)+1;
+		
+		System.out.println(questionNo);
+		
+		
+		while(totalStudent<noOfStudent){
+			
+			StudentID studentID = new StudentID();
+			Student student = new Student();
+			Question queans = new Question();
+			
+			
+			System.out.println("from Q " + queans.quesAns.get(questionNo));
+			
+			String stID = studentID.studentID();
+
+			/* if question type is multiple choice do this */
+	
+	
+			
+			System.out.println("Choose your answere [A,B,C,or D]: ");
+			System.out.println("StudentID"    +  "\tAnswer ");
+			
+		
+		
+			System.out.print(stID + "  ") ;
+			
+			System.out.println("\t"+ student.multipleChoiceAnswer());
+			
+			
+			
+			
+			
+			/* if question type is boolean choice do this */
+			
+			System.out.println("Choose your answere [T/F]: ");
+			
+			System.out.print(stID + "  ") ;
+			
+			System.out.println("\t"+ student.booleanAnswer());
+	
+			student.setStudentID(stID);//add studentId to student in a Set
+			//studentID.printSet();
+			//System.out.println(student.StudentIDs());
+			totalStudent++;
+			
+		}
+
+	}
+
+}

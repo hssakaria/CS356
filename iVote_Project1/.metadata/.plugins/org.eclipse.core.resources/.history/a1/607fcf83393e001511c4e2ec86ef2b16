@@ -1,0 +1,110 @@
+import java.util.Random;
+
+public class SimulationDriver{
+
+	public static void main(String[] args)  {
+		
+		int totalStudent = 0;
+		int noOfStudent = 5;
+		StudentID studentID = new StudentID();
+		Student student = new Student();
+		Question queans = new Question();
+		Random rand = new Random();
+		
+		System.out.println("Hetal Sakaria \n\n");
+		
+		System.out.println("\t CS356\n ");
+		
+		System.out.println("Post Question Type and Ans");
+		
+		Candidate candidate = new Candidate();
+
+		/************************************************
+		 * Randomly store question type in Candidate Class
+		 * If random number =1, it will be multiple choice
+		 * If random number = 2, it will be boolean choice
+		 *************************************************/
+		candidate.setQuesType(rand.nextInt(2)+1);
+		
+		// multiple choice
+		String stID = studentID.studentID();
+	//	System.out.println(queans.quesAns.get(2));
+
+		
+		if(candidate.getQuesType() == 1){
+			
+//			System.out.print(" Question Type is Multiple Choice " + candidate.getQuesType());
+			System.out.print(" Question Type is Multiple Choice  ");
+
+			candidate.aKey.add((" "+ candidate.multipleChoiceAnswer()));
+			System.out.println("Ans:  " + candidate.aKey.get(0));
+			//setAns
+			//display for student
+			
+			
+
+			System.out.println("Choose your answere [A,B,C,or D]: ");
+			System.out.println("StudentID"    +  "\tAnswer ");
+
+			System.out.print(stID + "  ") ;
+			
+			System.out.println("\t"+ student.multipleChoiceAnswer());
+			
+			
+			
+			
+		
+		}
+		
+		//boolean
+		else{
+			System.out.print(" Question Type boolean" + candidate.getQuesType() + "  ");
+			candidate.aKey.add(""+ candidate.booleanAnswer());
+			System.out.println(candidate.aKey.get(0));
+			
+			System.out.println("Choose your answere [T/F]: ");
+			System.out.println("StudentID"    +  "\tAnswer ");
+
+			System.out.print(stID + "  ") ;
+			
+			System.out.println("\t"+ student.booleanAnswer());
+		
+		}
+	
+	
+		
+//		while(totalStudent<noOfStudent){
+//			
+//			
+//
+//			/* if question type is multiple choice do this */
+//	
+//	
+//			
+//		
+//			System.out.print(stID + "  ") ;
+//			
+//			System.out.println("\t"+ student.multipleChoiceAnswer());
+//			
+//			
+//			
+//			
+//			
+//			/* if question type is boolean choice do this */
+//			
+//			System.out.println("Choose your answere [T/F]: ");
+//			
+//			System.out.print(stID + "  ") ;
+//			
+//			System.out.println("\t"+ student.booleanAnswer());
+//	
+//			student.setStudentID(stID);//add studentId to student in a Set
+//			//studentID.printSet();
+//			//System.out.println(student.StudentIDs());
+//			totalStudent++;
+//			
+//		}
+
+	}
+
+}

@@ -1,0 +1,6 @@
+
+public interface GenerateRandomNo {
+	
+	public String studentID();
+
+}

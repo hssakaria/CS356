@@ -1,0 +1,38 @@
+import java.util.Iterator;
+import java.util.Set;
+
+public class SimulationDriver {
+
+	public static void main(String[] args) {
+		
+		
+		
+		System.out.println("Hetal Sakaria \n\n");
+		
+		System.out.println("\t CS356\n ");
+		//System.out.println("\t By Yu Sun\n ");
+		System.out.println("A");
+		System.out.println("B ");
+		System.out.println("C ");
+		System.out.println("D ");
+		
+		System.out.println("Choose your answere:  ");
+		StudentID studentID = new StudentID();
+		Student student = new Student();
+		
+		System.out.println(studentID.studentID());
+		System.out.println(student.StudentIDs());
+
+		student.setStudentID(studentID.studentID());//add studentId to student in a Set
+		//studentID.printSet();
+		
+//		Iterator<String> iter = student.studentId.iterator();
+//		System.out.println(iter);
+//		while(iter.hasNext()){
+//			System.out.println("fad" +iter.next());
+//		}
+
+		
+		}
+
+}

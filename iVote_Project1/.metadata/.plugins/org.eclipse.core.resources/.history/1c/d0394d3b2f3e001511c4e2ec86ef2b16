@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Candidate {
+	
+	private int quesType;
+	private String ansKey;
+
+	List<Integer> qType = new ArrayList<Integer>();
+	List<String> aKey = new ArrayList<String>();
+	
+	
+	public int getQuesType() {
+		return quesType;
+	}
+	public void setQuesType(int quesType) {
+		this.quesType = quesType;
+		
+	
+	}
+	public String getAnsKey() {
+		return ansKey;
+	}
+	public void setAnsKey(String ansKey) {
+		this.ansKey = ansKey;
+	}
+
+	public void questionType(){
+		qType.add(quesType);
+	}
+	public void answereKey(){
+		aKey.add(ansKey);
+	}
+
+	
+
+}

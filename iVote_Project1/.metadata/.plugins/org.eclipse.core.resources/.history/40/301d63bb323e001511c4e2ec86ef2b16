@@ -1,0 +1,60 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+public class Candidate {
+	
+	private int quesType;
+	private String ansKey;
+
+	Random random = new Random();
+	private char studentAns;
+	
+	public int getQuesType() {
+		return quesType;
+	}
+	public void setQuesType(int quesType) {
+		this.quesType = quesType;
+		
+	
+	}
+	public String getAnsKey() {
+		return ansKey;
+	}
+	public void setAnsKey(String ansKey) {
+		this.ansKey = ansKey;
+	}
+
+	
+	/**************************************************************************
+	 Generate Random number from 65(A) to 68(D)
+	***************************************************************************/
+
+	public char multipleChoiceAnswer(){
+		int min = 65;
+		int max = 68;
+		int ans = random.nextInt(max-min +1) + min;
+		studentAns = (char)ans;
+			
+		return studentAns;
+	}
+	/**************************************************************************
+	 Generate Random number from 65(A) to 68(D)
+	***************************************************************************/
+
+	public char booleanAnswer(){
+	
+		int ans = random.nextInt(2)+1;
+		if(ans ==1){
+			studentAns = 84;
+		}
+		else
+			studentAns = 70;
+		
+			
+		return studentAns;
+	}
+
+	
+
+}

@@ -1,0 +1,35 @@
+
+public class Student {
+	
+	
+	
+	private String studentID;
+	private String studentAns;
+	/**
+	 * @return the studentAns
+	 */
+	public String getStudentAns() {
+		return studentAns;
+	}
+	/**
+	 * @param studentAns the studentAns to set
+	 */
+	public void setStudentAns(String studentAns) {
+		this.studentAns = studentAns;
+	}
+	/**
+	 * @return the studentID
+	 */
+	public String getStudentID() {
+		return studentID;
+	}
+	/**
+	 * @param studentID the studentID to set
+	 */
+	public void setStudentID(String studentID) {
+		this.studentID = studentID;
+	}
+	
+	
+
+}

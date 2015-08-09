@@ -1,0 +1,35 @@
+import java.util.Hashtable;
+import java.util.Map;
+
+public class Question {
+	private String question;
+	
+	
+	Map<Integer, String> quesAns =new Hashtable<Integer,String>();
+
+
+	private Map<Integer, String> getQuesAns() {
+		return quesAns;
+	}
+
+
+	private void setQuesAns(Map<Integer, String> quesAns) {
+		
+		quesAns.put(1, "A");
+		quesAns.put(1, "B");
+		quesAns.put(1, "T");
+		quesAns.put(1, "C");
+		quesAns.put(1, "A");
+		quesAns.put(1, "D");
+		quesAns.put(1, "T");
+		
+		
+		this.quesAns = quesAns;
+	}
+
+
+
+	
+	
+
+}

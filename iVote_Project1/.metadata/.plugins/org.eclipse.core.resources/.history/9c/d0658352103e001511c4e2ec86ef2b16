@@ -1,0 +1,20 @@
+
+public class Question {
+	private String question;
+	
+	
+	// to generate accessor, hold alt+command and press S
+	
+
+	private String getQuestion() {
+		return question;
+	}
+
+	private void setQuestion(String question) {
+		this.question = question;
+	}
+	
+	
+	
+
+}

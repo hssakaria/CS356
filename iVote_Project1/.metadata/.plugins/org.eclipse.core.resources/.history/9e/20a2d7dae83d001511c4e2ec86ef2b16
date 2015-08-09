@@ -1,0 +1,10 @@
+/***********************************
+ * Generate Unique Studend ID
+ * 
+ * @author hetu
+ *
+ ***********************************/
+public class StudentID {
+	private String studentID;
+
+}

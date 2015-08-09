@@ -1,0 +1,29 @@
+
+
+
+
+public class SimulationDriver {
+
+	public static void main(String[] args) {
+		
+		
+		
+		System.out.println("Hetal Sakaria \n\n");
+		
+		System.out.println("\t CS356\n ");
+		//System.out.println("\t By Yu Sun\n ");
+		System.out.println("A");
+		System.out.println("B ");
+		System.out.println("C ");
+		System.out.println("D ");
+		
+		System.out.println("Choose your answere:  ");
+		
+		
+		// user input answere
+	
+
+
+	}
+
+}
