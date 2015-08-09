@@ -12,7 +12,7 @@ import java.util.function.Consumer;
  ***********************************/
 
 
-public class StudentID implements GenerateRandomNo{
+public class StudentID {
 	private String studentID;
 	private Integer randomNo;
 	private Integer randomInitial;
@@ -31,7 +31,7 @@ public class StudentID implements GenerateRandomNo{
 	}
 
 
-	@Override
+	
 	public String studentID() {
 		
 		char initial1, initial2;

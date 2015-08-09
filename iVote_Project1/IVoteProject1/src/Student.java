@@ -1,23 +1,17 @@
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Hashtable;
-import java.util.List;
 import java.util.Map;
-import java.util.Random;
 import java.util.Set;
 
-public class Student extends Candidate {
+public class Student extends Candidate implements RandomGenerator{
 	
 	
-	//Random random = new Random();
 	private String studentID;
 	private char studentAns;
 	private char noOfStudents;
-	//private String randomchar;
 	
 	Set<String> studentId = new HashSet<String>();
 	
-	//List anslist = new ArrayList();
 	
 	Map<String, String> studentAnsTable = new Hashtable<String, String>();
 	/**
@@ -50,11 +44,7 @@ public class Student extends Candidate {
 	public void setNoOfStudents(char noOfstudents) {
 		this.noOfStudents = noOfstudents;
 	}
-	
-//	private void student()
-//	{
-//		studentId.add(studentID);
-//	}
+
 	public Set<String> StudentIDs(){
 		studentId.add(studentID);
 		
@@ -72,19 +62,6 @@ public class Student extends Candidate {
 	 Generate Random number from 65(A) to 68(D)
 	***************************************************************************/
 
-	public char multipleChoiceAnswer(){
-		int min = 65;
-		int max = 68;
-		int ans = random.nextInt(max-min +1) + min;
-		studentAns = (char)ans;
-			
-		return studentAns;
-	}
-	
-	/**************************************************************************
-	 Generate Random number from 65(A) to 68(D)
-	***************************************************************************/
-
 	public char generateNoOfStudents(){
 		int min =18;
 		int max = 30;
@@ -96,16 +73,31 @@ public class Student extends Candidate {
 	/**************************************************************************
 	 Generate Random number from 65(A) to 68(D)
 	***************************************************************************/
+	@Override
+	public char multipleChoiceAnswer(){
+		int min = 65;
+		int max = 68;
+		int ans = random.nextInt(max-min +1) + min;
+		studentAns = (char)ans;
+			
+		return studentAns;
+	}
+	
 
+	/**************************************************************************
+	 Generate Random number 1 for True (T = 84) and 2 for False (F = 70).
+	***************************************************************************/
+	@Override
 	public char booleanAnswer(){
 	
 		int ans = random.nextInt(2)+1;
-		if(ans ==1){
+		if(ans == 1){
 			studentAns = 84;
 		}
 		else
 			studentAns = 70;			
 		return studentAns;
 	}
+
 	
 }

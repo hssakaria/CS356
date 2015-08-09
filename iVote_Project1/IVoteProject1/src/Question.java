@@ -27,19 +27,7 @@ public class Question {
 		this.quesAns = quesAns;
 	}
 
-	private Map<Integer,String> QuetionAnsTable(){
-		
-		
-		quesAns.put(1, "A");
-		quesAns.put(2, "B");
-		quesAns.put(3, "T");
-		quesAns.put(4, "C");
-		quesAns.put(5, "A");
-		quesAns.put(6, "D");
-		quesAns.put(7, "T");
-		return quesAns;
-		
-	}
+	
 	
 	private String printTable(){
 		

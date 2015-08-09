@@ -1,0 +1,9 @@
+import java.util.Set;
+
+public interface GenerateRandomNo {
+	
+	public String studentID();
+	public char multipleChoiceAnswer();
+	public char booleanAnswer();
+
+}

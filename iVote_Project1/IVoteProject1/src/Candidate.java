@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Candidate {
+public class Candidate implements RandomGenerator{
 	
 	private int quesType;
 	private String ansKey;
@@ -42,7 +42,7 @@ public class Candidate {
 	 2 = Boolean QuestionType
 	***************************************************************************/
 
-	private int questionType(){
+	public int questionType(){
 		
 		quesType = random.nextInt(2)+1;
 		return quesType;
@@ -51,7 +51,7 @@ public class Candidate {
 	/**************************************************************************
 	 Generate Random number from 65(A) to 68(D)
 	***************************************************************************/
-
+	@Override
 	public char multipleChoiceAnswer(){
 		int min = 65;
 		int max = 68;
@@ -63,7 +63,7 @@ public class Candidate {
 	/**************************************************************************
 	 Generate Random number from 65(A) to 68(D)
 	***************************************************************************/
-
+	@Override
 	public char booleanAnswer(){
 	
 		int answere = random.nextInt(2)+1;
@@ -76,7 +76,6 @@ public class Candidate {
 			
 		return ans;
 	}
-
 	
 
 }

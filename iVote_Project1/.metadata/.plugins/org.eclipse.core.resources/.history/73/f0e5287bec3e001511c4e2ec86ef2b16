@@ -1,0 +1,109 @@
+import java.util.Enumeration;
+import java.util.Hashtable;
+import java.util.Map;
+
+public class IVoteService {
+	
+	private int totalStudentsSubmitted;
+	private int totalA=0;
+	private int totalB=0;
+	private int totalC=0;
+	private int totalD=0;
+	private int totalT=0;
+	private int totalF=0;
+	
+	Hashtable<String,String> iVote = new Hashtable<String, String>();
+	
+	Hashtable<String, Integer> studentsVoted = new Hashtable<String, Integer>();
+
+	public int getTotalStudentsSubmitted() {
+		return totalStudentsSubmitted;
+	}
+	public void setTotalStudentsSubmitted(int totalStudentsSubmitted) {
+		this.totalStudentsSubmitted = totalStudentsSubmitted;
+	}
+	public Hashtable<String, Integer> getStudentsVoted() {
+		return studentsVoted;
+	}
+	public void setStudentsVoted(Hashtable<String, Integer> studentsVoted) {
+		this.studentsVoted = studentsVoted;
+	}
+
+
+	
+	private Hashtable<String, String> getiVote() {
+		return iVote;
+	}
+	private void setiVote(Hashtable<String, String> iVote) {
+		this.iVote = iVote;
+	}
+	
+	public void PrintTable(){
+		System.out.println(iVote);
+	}
+	
+	public Hashtable<String,Integer> calcuateAns(){
+		
+		Enumeration<String> studentIDKey = iVote.keys();
+		
+		while(studentIDKey.hasMoreElements()){
+			
+			String key = studentIDKey.nextElement();
+			String answere = iVote.get(key);
+			
+				if(answere.equals("A")){
+					totalA++;
+					studentsVoted.put("A", totalA);
+				}
+				if(answere.equals("B")){
+					totalB++;
+					studentsVoted.put("B", totalB);
+
+				}
+				if(answere.equals("C")){
+					totalC++;
+					studentsVoted.put("C", totalC);
+
+				}
+				if(answere.equals("D")){
+					totalD++;
+					studentsVoted.put("D", totalD);
+
+				}
+				if(answere.equals("T")){
+					totalT++;
+					studentsVoted.put("T", totalT);
+
+				}
+				if(answere.equals("F")){
+					totalF++;
+					studentsVoted.put("F", totalF);
+
+				}
+			
+		}
+		return studentsVoted;
+
+	}
+	
+	public boolean Statistic(){
+		
+		System.out.println(totalStudentsSubmitted);
+		
+		Enumeration<String> studentsAnswered = studentsVoted.keys();
+		
+		while(studentsAnswered.hasMoreElements()){
+
+			String key = studentsAnswered.nextElement();
+			Integer eachVotesValues = studentsVoted.get(key);
+			
+			System.out.println(key + ":  " + ((double)eachVotesValues/(double)totalStudentsSubmitted)*100);
+			
+		
+		}
+		return false;
+		
+	}
+	
+
+}

@@ -1,0 +1,45 @@
+import java.util.Hashtable;
+import java.util.Map;
+
+public class IVoteService {
+	
+	private int totalStudentsSubmitted;
+	private int totalA=0;
+	private int totalB=0;
+	private int totalC=0;
+	private int totalD=0;
+	private int totalT=0;
+	private int totalF=0;
+	
+	Hashtable<String,String> iVote = new Hashtable<String, String>();
+	
+	
+	
+	private Hashtable<String, String> getiVote() {
+		return iVote;
+	}
+	private void setiVote(Hashtable<String, String> iVote) {
+		this.iVote = iVote;
+	}
+	public int getTotalStudentsSubmitted() {
+		return totalStudentsSubmitted;
+	}
+	public void setTotalStudentsSubmitted(int totalStudentsSubmitted) {
+		this.totalStudentsSubmitted = totalStudentsSubmitted;
+	}
+
+	public void PrintTable(){
+		System.out.println(iVote);
+	}
+	
+	private void calcuateAns(){
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}
