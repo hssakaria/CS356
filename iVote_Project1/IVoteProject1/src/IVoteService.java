@@ -1,7 +1,15 @@
+/***************************************************************************
+ * All the answers get submitted to IVoteService.
+ * Store students' answer in a studentsVoted Hashtable.The key is studentId
+ * and the value is Answer.
+ * IVoteService then calculate the statistics according to given question 
+ * type.
+ * It also DisplayStatistic and print the hashtable.
+ * 
+ ****************************************************************************/
 import java.text.DecimalFormat;
 import java.util.Enumeration;
 import java.util.Hashtable;
-import java.util.Map;
 
 public class IVoteService {
 	
@@ -12,10 +20,11 @@ public class IVoteService {
 	private int totalD=0;
 	private int totalT=0;
 	private int totalF=0;
+	private String candidateans;
 	
 	Hashtable<String,String> iVote = new Hashtable<String, String>();
 	
-	Hashtable<String, Integer> studentsVoted = new Hashtable<String, Integer>();
+	Hashtable<String, Integer> calculatedVote = new Hashtable<String, Integer>();
 
 	public int getTotalStudentsSubmitted() {
 		return totalStudentsSubmitted;
@@ -24,24 +33,24 @@ public class IVoteService {
 		this.totalStudentsSubmitted = totalStudentsSubmitted;
 	}
 	public Hashtable<String, Integer> getStudentsVoted() {
-		return studentsVoted;
+		return calculatedVote;
 	}
 	public void setStudentsVoted(Hashtable<String, Integer> studentsVoted) {
-		this.studentsVoted = studentsVoted;
+		this.calculatedVote = studentsVoted;
 	}
 
+	/**************************************************************************
+	 * Print iVote Hashtable.
+	 ***************************************************************************/
 
-	
-	private Hashtable<String, String> getiVote() {
-		return iVote;
-	}
-	private void setiVote(Hashtable<String, String> iVote) {
-		this.iVote = iVote;
-	}
-	
 	public void PrintTable(){
 		System.out.println(iVote);
 	}
+	
+	/**************************************************************************
+	 * Calculate answer according to question type and stores into studentsVoted
+	 * Hashtable.
+	 ***************************************************************************/
 	
 	public Hashtable<String,Integer> calcuateAns(){
 		
@@ -50,64 +59,80 @@ public class IVoteService {
 		while(studentIDKey.hasMoreElements()){
 			
 			String key = studentIDKey.nextElement();
+			
 			String answere = iVote.get(key);
 			
 				if(answere.equals("A")){
 					totalA++;
-					studentsVoted.put("A", totalA);
+					calculatedVote.put("A", totalA);
 				}
 				if(answere.equals("B")){
 					totalB++;
-					studentsVoted.put("B", totalB);
+					calculatedVote.put("B", totalB);
 
 				}
 				if(answere.equals("C")){
 					totalC++;
-					studentsVoted.put("C", totalC);
+					calculatedVote.put("C", totalC);
 
 				}
 				if(answere.equals("D")){
 					totalD++;
-					studentsVoted.put("D", totalD);
+					calculatedVote.put("D", totalD);
 
 				}
 				if(answere.equals("T")){
 					totalT++;
-					studentsVoted.put("T", totalT);
+					calculatedVote.put("T", totalT);
 
 				}
 				if(answere.equals("F")){
 					totalF++;
-					studentsVoted.put("F", totalF);
+					calculatedVote.put("F", totalF);
 
 				}
 			
 		}
-		return studentsVoted;
+		return calculatedVote;
 
 	}
 	
-	public String Statistic(){
+	/**************************************************************************
+	 * Print iVote Hashtable.
+	 ***************************************************************************/
+	
+	public String DisplayStatistic(){
 		
 		 DecimalFormat df = new DecimalFormat("#.##");
 
 		
-		Enumeration<String> studentsAnswered = studentsVoted.keys();
-		
-		while(studentsAnswered.hasMoreElements()){
+		Enumeration<String> studentsAnswered = calculatedVote.keys();
 
-			String key = studentsAnswered.nextElement();
-			Integer eachVotesValues = studentsVoted.get(key);
+		while(studentsAnswered.hasMoreElements()){
 			
-			System.out.println(key + ":  " 
+			String key = studentsAnswered.nextElement();
+			Integer eachVotesValues = calculatedVote.get(key);
+			
+		
+			
+			System.out.println("\t\t"+key + ":  " 
 					+ df.format(((double)eachVotesValues/(double)totalStudentsSubmitted)*100)
 					+ "%");
-			
+			}
 		
-		}
 		return "";
 		
 	}
 	
+	public void ConfigureStatistic(){
+		System.out.println("Cadidate Ans: "+ candidateans);
+		
+	}
+	public String getCandidateans() {
+		return candidateans;
+	}
+	public void setCandidateans(String candidateans) {
+		this.candidateans = candidateans;
+	}
 
 }

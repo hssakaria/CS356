@@ -1,40 +1,32 @@
-import java.util.HashSet;
-import java.util.Hashtable;
-import java.util.Map;
-import java.util.Set;
 
-public class Student extends Candidate implements RandomGenerator{
-	
+
+/***************************************************************************
+ * Generate number of students between 18 to 30.
+ * Generate Student's answer randomly depending on the question type.
+ * Eg. For multiple choice question, it generates answer from A to D
+ * 	   if question type is boolean, it generates answer T and F.
+ * 
+ ****************************************************************************/
+
+public class Student extends Candidate{
 	
 	private String studentID;
 	private char studentAns;
 	private char noOfStudents;
-	
-	Set<String> studentId = new HashSet<String>();
-	
-	
-	Map<String, String> studentAnsTable = new Hashtable<String, String>();
-	/**
-	 * @return the studentAns
-	 */
+
+
 	public char getStudentAns() {
 		return studentAns;
 	}
-	/**
-	 * @param studentAns the studentAns to set
-	 */
+
 	public void setStudentAns(char studentAns) {
 		this.studentAns = studentAns;
 	}
-	/**
-	 * @return the studentID
-	 */
+
 	public String getStudentID() {
 		return studentID;
 	}
-	/**
-	 * @param studentID the studentID to set
-	 */
+	
 	public void setStudentID(String studentID) {
 		this.studentID = studentID;
 	}
@@ -45,21 +37,9 @@ public class Student extends Candidate implements RandomGenerator{
 		this.noOfStudents = noOfstudents;
 	}
 
-	public Set<String> StudentIDs(){
-		studentId.add(studentID);
 		
-		return studentId;
-	}
-		
-//	
-//	public void printset(){
-//		Iterator iter = studentId.iterator();
-//		while(iter.hasNext()){
-//			System.out.println(iter.next());
-//
-//		}
 	/**************************************************************************
-	 Generate Random number from 65(A) to 68(D)
+	 Generate Random number of students from 18 to 30.
 	***************************************************************************/
 
 	public char generateNoOfStudents(){
@@ -70,6 +50,7 @@ public class Student extends Candidate implements RandomGenerator{
 			
 		return noOfStudents;
 	}
+	
 	/**************************************************************************
 	 Generate Random number from 65(A) to 68(D)
 	***************************************************************************/
@@ -82,7 +63,31 @@ public class Student extends Candidate implements RandomGenerator{
 			
 		return studentAns;
 	}
-	
+	/**************************************************************************
+	 This function returns the list of multiple answers.
+	 for example: A,B or A,B,D etc.
+	 This function call when question type is multiple choice that has more than
+	 one answers.
+	***************************************************************************/
+	@Override	
+	public  void multipleLetters(){
+		
+		String[] array = {"A","B","C","D"};
+			
+			
+			for(int i=0; i<4; i++){
+				int randomNo = random.nextInt(5);
+				if (randomNo == 1 ||randomNo == 4 ){
+					array[i] = " ";
+				}
+				
+			}
+					
+			for(int i=0; i<array.length; i++){
+				System.out.print(array[i]+ " ");
+				
+			}
+	}
 
 	/**************************************************************************
 	 Generate Random number 1 for True (T = 84) and 2 for False (F = 70).
@@ -95,7 +100,8 @@ public class Student extends Candidate implements RandomGenerator{
 			studentAns = 84;
 		}
 		else
-			studentAns = 70;			
+			studentAns = 70;
+		
 		return studentAns;
 	}
 

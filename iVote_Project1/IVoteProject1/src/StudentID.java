@@ -4,15 +4,14 @@ import java.util.Random;
 import java.util.Set;
 import java.util.function.Consumer;
 
-/***********************************
- * Generate Unique Studend ID
+/***************************************************************************
+ * Generate unique student ID.(eg. ae12345)
+ * Generate first two digits as chars from (a to z) and last five digits.
  * 
- * @author hetu
- *
- ***********************************/
-
+ ****************************************************************************/
 
 public class StudentID {
+	
 	private String studentID;
 	private Integer randomNo;
 	private Integer randomInitial;
@@ -20,17 +19,17 @@ public class StudentID {
 	Set<String> set = new HashSet<String>();
 	Random random = new Random();
 	
-	
 	public String getStudentID() {
 		return studentID;
 	}
-
 
 	public void setStudentID(String studentID) {
 		this.studentID = studentID;
 	}
 
-
+	/**************************************************************************
+	 Generate Unique StudentID.
+	***************************************************************************/
 	
 	public String studentID() {
 		
@@ -52,7 +51,8 @@ public class StudentID {
 	}
 
 	/**************************************************************************
-	 Generate Random number from 97 to 122
+	 Generate Random number from 97 to 122 (a to z) for the first two digits
+	 in a student ID.
 	***************************************************************************/
 
 	private void randomChar() {
@@ -60,7 +60,6 @@ public class StudentID {
 		int max = 122;
 		randomInitial = random.nextInt(max-min +1) + min;
 		
-	}
-	
+	}	
 
 }
